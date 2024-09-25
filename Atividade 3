@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+void main () {
+	
+	int a=1, b, i;
+	
+	printf ("escreva um numero inteiro: ");
+	scanf("%d", &b);
+	
+	printf("%d\n", a);
+	
+	for	(i=a;i<=b;i++) {
+		
+		printf("%d", i);
+		
+		if (b=1){
+		printf("\n %d", i --)
+		}
+	
+	}
+}
