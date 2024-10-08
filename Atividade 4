@@ -1,0 +1,75 @@
+/*A Direção de uma Faculdade decidiu fazer uma pesquisa com uma amostra de X pessoas, incluindo professores e
+funcionários.
+Cada um informou se é professor (código 1) ou funcionário (código 2), idade, escolaridade (I – fundamental incompleto,
+F – fundamental completo, E – ensino médio, G – graduação, P – Especialização, M – Mestrado, D – Doutorado).
+Desenvolver um programa que obtenha esses dados e, ao final, exiba:
+a. Percentual de professores que são mestres ou doutores;
+b. Quantidade de Especialistas;
+c. Média de idade dos que não possuem o ensino fundamental completo.*/
+
+#include<stdio.h>
+
+void main ()
+{
+	int cargo, contProf = 0, contFunc = 0, contEspec = 0, contMest_Dout = 0, contIncomp, soma_idade = 0;
+	float ProfM_D = 0;
+	int pesquisa = 0, idade, escolaridade, M_incompleto = 0;
+	
+
+	do {
+	
+	printf("Voce e professor ou funcionario? [digite 1 para professor e 2 para funcionario] \n");	
+	scanf("%d", &cargo);
+	
+	if (cargo==1){
+		contProf++;
+	 }
+	 else  { if (cargo==2) {
+	 
+	contFunc++;
+}
+}
+		
+	printf("Diga sua idade \n");	
+	scanf("%d", &idade);
+	
+	
+	printf("Qual sua escolaridade? \n 1 Fundamental incompleto \n 2 Fundamental completo \n 3 Ensino medio \n 4 Graduacao \n 5 Especializacao \n 6 Mestrado \n 7 Doutorado \n");	
+	scanf(" %d", &escolaridade);
+	
+	if (escolaridade==5){
+		contEspec++;
+	 } else  { if (escolaridade==6 || escolaridade== 7) { // *CORRIGIDO PELO GPT* (Minha versão: (escolaridade == 6 || 7))
+	 
+	contMest_Dout++;}
+	}
+
+	if (escolaridade==1){
+		contIncomp++;
+		soma_idade += idade; // CORRIGIDO PELO CHAT GPT (Minha versão era: idade + idade)
+	}
+	
+	printf("Deseja continuar a pesquisa? [Digite 1 para continuar e 2 para sair] \n");	
+	scanf(" %d", &pesquisa); 
+	
+		}
+	while (pesquisa==1);
+	
+	// CALCULANDO PERCENTUAL DE PROFESSORES MESTRES E DOUTORES 
+	ProfM_D = ((float)contMest_Dout / contProf) * 100; // *corrigido pelo chat gpt* (minha versão (não tinha convertido para float: ProfM_D = contMest_Dout / contProf) * 100;
+	
+	printf("O percentual de professores que possuem Mestrado ou Doutorado e: %.2f %% \n", ProfM_D);
+	
+	//EXIBINDO PERCENTUAL DE ESPECIALISTAS 
+	
+	printf("A quantidade de professores especialistas e: %d \n", contEspec);
+	
+	// CALCULANDO IDADE DOS QUE NÃO POSSUEM FUNDAMENTAL 
+	
+	M_incompleto = soma_idade / contIncomp;
+	printf("A idade media dos que nao possuem fundamental e: %d", M_incompleto);
+	
+
+}
+
+	
