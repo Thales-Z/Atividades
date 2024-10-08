@@ -1,21 +1,85 @@
+/*senvolver um programa que, dado um número inteiro n, exiba um triângulo conforme ilustrado pelo exemplo a
+seguir:
+n = 7
+1
+2 1
+1 2 3
+4 3 2 1
+1 2 3 4 5
+6 5 4 3 2 1
+1 2 3 4 5 6 7
+
+*/
+
 #include<stdio.h>
 
-void main () {
+void main () 
+
+{
+	int Numero,Numero2, Numero3, Numero4, Numero5, Numero6, Numero7;
+	int a,b,c, i,j,k; 
 	
-	int a=1, b, i;
+	printf("digite um numero \n");
+	scanf("%d", &Numero);
 	
-	printf ("escreva um numero inteiro: ");
-	scanf("%d", &b);
 	
-	printf("%d\n", a);
-	
-	for	(i=a;i<=b;i++) {
+	for (i=1; i<=Numero; i++) //1 a 7 
+	{
 		
-		printf("%d", i);
+		printf("%d ", i);
+	Numero2 = i - 1; // 7-1
+
+	} 
+	printf("\n"); 
+	
+	for (j=Numero2;j>=1; j--) //6 a 1
+	{
 		
-		if (b=1){
-		printf("\n %d", i --)
+		printf("%d ", j);
+		Numero3 = Numero2 -1; // 6-1 =5
+		
 		}
+		
+		printf("\n");
+		
+		for (k=1; k<=Numero3; k++) {
+		
+		printf("%d ", k);
+	Numero4 = Numero3 - 1; // 5-1 = 4
+
+	} printf("\n");
 	
-	}
+	//
+	
+	for (a=Numero4;a>=1; a--) 
+	{
+		
+		printf("%d ", a);
+		Numero5 = Numero4 -1; //4-1 = 3
+		
+		}
+		
+		printf("\n");
+	
+	for (b=1; b<=Numero5; b++) {
+		
+		printf("%d ", b);
+	Numero6 = Numero5 - 1; // 3-1 =2
+
+	} printf("\n");
+	
+	for (c=Numero6;Numero6>=1; Numero6--) 
+	{
+		
+		printf("%d ", Numero6);
+		Numero7 = 1; // 2-1
+		
+		}
+		
+		printf("\n");
+	
+	 printf("%d \n", Numero7);
+
+	
+	
 }
